@@ -1,5 +1,8 @@
 """
     Overview:
+        * p =  A large prime number , and r = A primative root mod (p)
+        both are public for anyone to see.
+        
         * If X = person1 private key AND Y = public key = r^X mod(p)
 
         * Then person2 uses the public-key to create a unique master key: K = Y^k mod(p)
@@ -90,23 +93,23 @@ def decrypt(private_key, r, p, cipher):
     #4. Return the message
     return M
 
-"""
-    Public over channel:
-        p =  A large prime number
-        r = A primative root mod (p)
-"""
 if __name__ == "__main__":
     p = 563
     r = 5
+
     public_key, private_key = gen_keys(p, r)
     print("Generating public-key and private-key...")
+
     print("="*30)
     print("Encrypting secret message!")
+
     M = 100
     print("Before encryption:", M)
     ciphertext = encrypt(public_key, M, p, r)
     print("After encryption:", ciphertext)
+
     print("="*30)
     print("Decrypting secret message!")
+
     M = decrypt(private_key, r, p, ciphertext)
     print("Returning Message:", M)
