@@ -79,7 +79,7 @@ def encrypt(public_key, M, p, r):
     return (C1, C2)
 
 #3. Decryption:
-def decrypt(private_key, r, p, cipher):
+def decrypt(private_key, p, ciphertext):
     #1. Receive (C1,C2)
     C1, C2 = ciphertext
 
@@ -111,5 +111,5 @@ if __name__ == "__main__":
     print("="*30)
     print("Decrypting secret message!")
 
-    M = decrypt(private_key, r, p, ciphertext)
+    M = decrypt(private_key, p, ciphertext)
     print("Returning Message:", M)
