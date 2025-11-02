@@ -106,7 +106,7 @@ if __name__ == "__main__":
     M = 100
     print("Before encryption:", M)
     ciphertext = encrypt(public_key, M, p, r)
-    print("After encryption:", ciphertext)
+    print("After encryption:(C1, C2) =", ciphertext)
 
     print("="*30)
     print("Decrypting secret message!")
